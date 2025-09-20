@@ -7,8 +7,8 @@ function render(){
 	let year = date.getFullYear();
 	let hours = date.getHours();
 	let hoursD = hours % 12;
-	let mins = date.getMinutes();
-	let secs = date.getSeconds();
+	let mins = date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes();
+    let secs = date.getSeconds() > 9 ? date.getSeconds() : "0" + date.getSeconds();
 	let ampm = hours >= 12 ? "PM" : "AM";
 	element.innerHTML = `
 		${month}/${dateD}/${year}, ${hoursD}:${mins}:${secs} ${ampm}
